@@ -42,6 +42,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="JHk-on-xyq">
                                 <rect key="frame" x="35" y="119" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderNumberOfYearsChangedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="sRG-7L-JsH"/>
+                                </connections>
                             </slider>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yPg-Kv-aSu">
                                 <rect key="frame" x="35" y="164" width="97" height="30"/>
@@ -53,11 +56,17 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.050000000000000003" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="k2n-KF-u4S">
                                 <rect key="frame" x="37" y="211" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderInterestRateChangeWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="dBz-0L-Ks5"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4w-oU-Tz0">
                                 <rect key="frame" x="62" y="275" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="displayAmount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5Q-eu-k5z"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interest Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDc-hm-F8w">
                                 <rect key="frame" x="155" y="164" width="98" height="21"/>
@@ -67,7 +76,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pr-p7-2q6">
-                                <rect key="frame" x="166" y="280" width="60" height="21"/>
+                                <rect key="frame" x="166" y="280" width="160" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -84,9 +93,18 @@
                         <color key="backgroundColor" red="0.81893620466321249" green="0.81893620466321249" blue="0.81893620466321249" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="labelAmount" destination="0pr-p7-2q6" id="9Jm-XW-9Uh"/>
+                        <outlet property="sliderInterestRate" destination="k2n-KF-u4S" id="LuA-dj-Lvn"/>
+                        <outlet property="sliderNumberOfYears" destination="JHk-on-xyq" id="FWZ-Vk-dhm"/>
+                        <outlet property="textFieldInterestRate" destination="yPg-Kv-aSu" id="QTA-QN-PwQ"/>
+                        <outlet property="textFieldNumberOfYears" destination="AIa-q5-CMF" id="po7-eW-LR0"/>
+                        <outlet property="textFieldPrincipal" destination="YrQ-3x-Br3" id="CmY-dC-YGP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
 </document>

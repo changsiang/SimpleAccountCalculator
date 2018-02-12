@@ -40,9 +40,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func displayAmount(_ sender:Any){
-        let principalAmount: Int = Int(textFieldPrincipal.text)!
-        let numberOfYears: Int = Int(textFieldNumberOfYears.text)!
-        let interestRate: Float = NSString(String: textFieldInterestRate.text!).floatValue / 100;
+        let principalAmount: Int = Int(textFieldPrincipal.text!)!
+        let numberOfYears: Int = Int(textFieldNumberOfYears.text!)!
+        let interestRate: Float = NSString(string: textFieldInterestRate.text!).floatValue / 100;
         let finalAmount = Double(principalAmount) * pow (Double(1+interestRate), Double(numberOfYears));
         labelAmount.text = NSString(format: "%.2f", finalAmount) as String;
     }
