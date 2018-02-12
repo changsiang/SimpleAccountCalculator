@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textFieldPrincipal: UITextField!
     @IBOutlet weak var textFieldNumberOfYears: UITextField!
