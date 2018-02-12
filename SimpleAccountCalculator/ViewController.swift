@@ -45,6 +45,14 @@ class ViewController: UIViewController {
         let interestRate: Float = NSString(string: textFieldInterestRate.text!).floatValue / 100;
         let finalAmount = Double(principalAmount) * pow (Double(1+interestRate), Double(numberOfYears));
         labelAmount.text = NSString(format: "%.2f", finalAmount) as String;
+
+        textFieldPrincipal.delegate = self;
+        textFieldNumberOfYears.delegate = self;
+        textFieldInterestRate.delegate = self;
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField){
+        self.displayAmount(textField);
     }
 
     override func didReceiveMemoryWarning() {
