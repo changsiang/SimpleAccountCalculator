@@ -25,6 +25,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         sliderNumberOfYears.value = 10;
         textFieldInterestRate.text = "1";
         sliderInterestRate.value = 1
+
+        
+        textFieldPrincipal.delegate = self;
+        textFieldNumberOfYears.delegate = self;
+        textFieldInterestRate.delegate = self;
     }
 
     @IBAction func sliderNumberOfYearsChanged( sender: Any){
@@ -45,10 +50,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let interestRate: Float = NSString(string: textFieldInterestRate.text!).floatValue / 100;
         let finalAmount = Double(principalAmount) * pow (Double(1+interestRate), Double(numberOfYears));
         labelAmount.text = NSString(format: "%.2f", finalAmount) as String;
-
-        textFieldPrincipal.delegate = self;
-        textFieldNumberOfYears.delegate = self;
-        textFieldInterestRate.delegate = self;
     }
 
     func textFieldDidEndEditing(_ textField: UITextField){
